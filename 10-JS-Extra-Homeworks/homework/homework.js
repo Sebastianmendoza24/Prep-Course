@@ -1,5 +1,7 @@
 // No cambies los nombres de las funciones.
 
+const { arrayReplaceAt } = require("markdown-it/lib/common/utils");
+
 function deObjetoAmatriz(objeto){
   // Escribe una función que convierta un objeto en una matriz, donde cada elemento representa 
   // un par clave-valor en forma de matriz.
@@ -10,6 +12,11 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  var nuevoArray = [];
+  for (var clave in objeto){
+    nuevoArray.push([clave,objeto[clave]])
+  }
+  return nuevoArray;
 }
 
 
@@ -18,6 +25,14 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  var obj = {}
+  for (let i=0; i < string.length; i++){
+    if(!obj[string[i]]) {
+      obj[string[i]] = 0;
+    }
+    obj[string[i]] += 1;
+  }
+  return obj;
 }
 
 
@@ -26,6 +41,12 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  var minusculas = "";
+  var mayusculas = "";
+  for (var i = 0; i<s.length; i++){
+    if (s[i] === s[i].toUpperCase())
+    mayusculas = mayusculas + s[i] 
+  }
 }
 
 
@@ -35,6 +56,10 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+  var invertida = str.split(' ').map(function(elemento){
+    return elemento.split('').reverse().join('')
+  })
+  return invertida.join(' ')
 } 
 
 
@@ -43,6 +68,13 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  var capi = numero.toString();
+  var invertida = capi.split('').reverse().join('');
+  if (capi===invertida) {
+    return 'Es capicua';
+  }else{
+    return 'No es capicua';
+  }
 }
 
 
@@ -50,6 +82,10 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  var stringNueva = '';
+  for (var i = 0;1 < array.length; i++) {
+
+  }
 }
 
 
